@@ -1,7 +1,7 @@
 estoque = {}
 
 while True:
-    print("\n1 - Entrda de produto")
+    print("\n1 - Entrada de produto")
     print("2 - Saída de produto")
     print("3 - Ver estoque")
     print("4 - Sair")
@@ -20,7 +20,7 @@ while True:
         print("Estoque atualizado!")
 
     elif opcao == "2":
-        produto = input("Produto: "). lower()
+        produto = input("Produto: ").lower()
         qtd = int(input("Quantidade de saída: "))
 
         if produto in estoque and estoque[produto] >= qtd:
@@ -29,6 +29,17 @@ while True:
         else:
             print("Produto não encontrado ou quantidade insuficiente em estoque.")
 
+    elif opcao == "3":
+        print("\nEstoque: ")
+        if estoque:
+            for produto, qtd in estoque.items():
+                print(f"{produto}: {qtd}")
+        else:
+            print("Estoque vazio.")
+
     elif opcao == "4":
         print("Sistema encerrado")
         break
+
+    else:
+        print("Opção inválida.")
