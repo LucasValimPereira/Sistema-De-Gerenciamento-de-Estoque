@@ -19,6 +19,16 @@ while True:
 
         print("Estoque atualizado!")
 
+    elif opcao == "2":
+        produto = input("Produto: "). lower()
+        qtd = int(input("Quantidade de saída: "))
+
+        if produto in estoque and estoque[produto] >= qtd:
+            estoque[produto] -= qtd
+            print("Saída registrada!")
+        else:
+            print("Produto não encontrado ou quantidade insuficiente em estoque.")
+
     elif opcao == "4":
-        print("Sitema encerrado")
+        print("Sistema encerrado")
         break
